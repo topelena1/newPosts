@@ -1,0 +1,36 @@
+<div class="container">
+    <h3>Post search</h3>
+
+    <div class="flexContainer marginBottom">
+        <span class="entry"> Search </span>
+        <input 
+          class="flexItem"
+          required 
+          color="primary"
+          [(ngModel)] = "queryString" 
+          placeholder=" type post to find..."/>
+    </div>
+</div>
+
+
+
+
+<main class="main-area">
+  <div class="centered">
+    <section class="cards">
+        <article class="card"  *ngFor="let post of posts | FilterPipe: queryString">   
+          <a  routerLink="/detail/{{post.id}}">
+            <div class="card-content">        
+                <h2>{{ post.texttitle | uppercase }}  </h2>            
+                <p>{{ post.text }}</p>
+                <p>TAG: {{ post.tags | uppercase}}</p>
+            </div>
+          </a>   
+     
+        </article>   
+     </section>
+   </div>
+</main>
+ 
+
+

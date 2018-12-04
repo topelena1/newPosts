@@ -1,0 +1,14 @@
+<main class="main-area" *ngIf="post" >
+  <div class="centered">      
+      <article class="card">
+         <div class="card-content">
+           <h2>{{post.texttitle|uppercase}}</h2>
+           <h4 (click)="openDialog()">{{post.author | uppercase}}</h4>        
+            <p>{{post.full}}</p>   
+            <button  (click)="goBack()">Back</button>   
+        </div>
+      </article>      
+  </div> 
+</main>
+
+  
